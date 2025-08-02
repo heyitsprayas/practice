@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Map | Nepal Explorer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 70vh;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header (copied from index.html) -->
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">Nepal Explorer</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Page Title -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title animate">Interactive Travel Map</h2>
+    <p style="text-align: center;">Click on locations to learn more about key destinations across Nepal.</p>
+    <div id="map" class="animate"></div>
+  </div>
+</section>
+
+<!-- Footer (copied from index.html) -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Nepal Explorer</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([28.3949, 84.1240], 7); // Nepal center
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  // Add example markers
+  L.marker([27.7172, 85.3240]).addTo(map).bindPopup("<b>Kathmandu</b><br>UNESCO Cultural Sites");
+  L.marker([27.5330, 84.4525]).addTo(map).bindPopup("<b>Chitwan National Park</b><br>Wildlife & Safaris");
+  L.marker([28.5983, 83.9311]).addTo(map).bindPopup("<b>Pokhara</b><br>Lakes & Mountain Views");
+</script>
+</body>
+</html>

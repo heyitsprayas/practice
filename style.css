@@ -1,0 +1,361 @@
+/* Reset & Base Styles */
+/* === Hero Section Background Image === */
+.hero {
+  padding: 100px 0 60px;
+  text-align: center;
+  background: url('img1.jpg') center/cover no-repeat;
+  color: white;
+  position: relative;
+  min-height: 90vh;
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+  color: #333;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+a {
+  text-decoration: none;
+  color: #e91e63;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d81b60;
+  font-family: 'Playfair Display', serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e91e63;
+}
+
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #e91e63;
+  color: white;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #c2185b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(233, 30, 99, 0.3);
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #d81b60;
+  font-family: 'Playfair Display', serif;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 380px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-img {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  background: #1a1a1a;
+  color: #bbb;
+  margin-top: 80px;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .section-title { font-size: 2rem; }
+  .navbar { flex-direction: column; gap: 15px; }
+  .nav-links { gap: 15px; }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  animation: fadeIn 0.8s ease forwards;
+}
+/* Highlight selected quiz option */
+.option.selected {
+  background-color: #d0f0ff;
+  border: 2px solid #0077b6;
+  border-radius: 5px;
+  padding: 8px;
+}
+.options-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.options-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.options-table td:hover {
+  background-color: #f0f8ff;
+}
+
+.options-table .option.selected {
+  background-color: #d0f0ff;
+  border: 2px solid #0077b6;
+  font-weight: bold;
+}
+.quiz-teaser {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  padding: 60px 0;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.quiz-teaser h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #d81b60;
+  font-family: 'Playfair Display', serif;
+}
+
+.quiz-teaser p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.quiz-btn {
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  background-color: #0077b6;
+  border-radius: 30px;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quiz-btn:hover {
+  background-color: #023e8a;
+  transform: translateY(-2px);
+}
+/* === Quiz Options Styling === */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0 40px;
+}
+
+.option {
+  background-color: #f9f9f9;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 2px solid #eee;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option:hover {
+  background-color: #f0f8ff;
+  border-color: #ccc;
+}
+
+.option.selected {
+  background-color: #d0f0ff;
+  border-color: #0077b6;
+  font-weight: 600;
+}
+.blog-section {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+}
+
+.blog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  max-width: 360px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card h3 {
+  font-size: 1.4rem;
+  color: #d81b60;
+  margin-bottom: 10px;
+}
+
+.blog-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.read-more {
+  color: #0077b6;
+  font-weight: 500;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+
+
+

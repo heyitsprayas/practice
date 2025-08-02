@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz | Nepal Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">Nepal Explorer</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="map.html">Map</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="quiz" class="section">
+  <div class="container">
+    <h2 class="section-title animate">Find Your Perfect Nepal Adventure</h2>
+    <div class="quiz-container animate">
+      <div class="quiz-header">
+        <p>Answer a few questions to discover which part of Nepal matches your interests!</p>
+      </div>
+
+      <!-- Question 1 -->
+<div class="question">1. What kind of travel experience are you looking for?</div>
+<div class="options" data-question="1">
+  <div class="option" onclick="selectOption(this, 'mountains')">Challenging treks and mountain views</div>
+  <div class="option" onclick="selectOption(this, 'culture')">Ancient temples and cultural immersion</div>
+  <div class="option" onclick="selectOption(this, 'wildlife')">Jungle safaris and wildlife spotting</div>
+  <div class="option" onclick="selectOption(this, 'all')">All of the above!</div>
+</div>
+
+<!-- Question 2 -->
+<div class="question">2. How physically active do you want your trip to be?</div>
+<div class="options" data-question="2">
+  <div class="option" onclick="selectOption(this, 'high')">Very active - I want challenging hikes</div>
+  <div class="option" onclick="selectOption(this, 'medium')">Moderate - some walking, but not extreme</div>
+  <div class="option" onclick="selectOption(this, 'low')">Relaxed - I prefer cultural sites and easy walks</div>
+</div>
+
+<!-- Question 3 -->
+<div class="question">3. Which landscape appeals to you most?</div>
+<div class="options" data-question="3">
+  <div class="option" onclick="selectOption(this, 'mountains')">Snowy peaks and high mountain passes</div>
+  <div class="option" onclick="selectOption(this, 'culture')">Historic cities and temple complexes</div>
+  <div class="option" onclick="selectOption(this, 'wildlife')">Lush forests and river valleys</div>
+</div>
+
+
+
+      <!-- Submit -->
+      <button class="btn" onclick="calculateResult()" style="width: 100%;">See My Recommendation</button>
+
+      <!-- Result -->
+      <div class="result" id="result" style="display: none;">
+        <h3 id="result-title">Your Nepal Adventure Awaits!</h3>
+        <p id="result-desc"></p>
+        <a href="index.html#destinations" class="btn" style="margin-top: 15px;">Start Planning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Nepal Explorer</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
